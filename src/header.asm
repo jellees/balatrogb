@@ -229,6 +229,23 @@ ExecHBlank:
     ldh [c], a
     ld a, [hl+]
     ldh [c], a
+    
+    ld a, [hl+]
+    ldh [c], a
+    ld a, [hl+]
+    ldh [c], a
+    ld a, [hl+]
+    ldh [c], a
+    ld a, [hl+]
+    ldh [c], a
+    ld a, [hl+]
+    ldh [c], a
+    ld a, [hl+]
+    ldh [c], a
+    ld a, [hl+]
+    ldh [c], a
+    ld a, [hl+]
+    ldh [c], a
 
     pop bc
     pop hl

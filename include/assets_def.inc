@@ -46,5 +46,6 @@ def PALETTE_HUD_MULT         equ 2
 def PALETTE_HUD_MONEY        equ 3
 def PALETTE_HUD_DEFAULT      equ 4
 def PALETTE_HUD_GOAL         equ 5
+def PALETTE_HUD_MOVE_SELL    equ 6
 
 endc

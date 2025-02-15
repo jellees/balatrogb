@@ -4,5 +4,6 @@
         "src/constants",
         "src/macros",
         "include"
-    ]
+    ],
+    "makefile.configureOnOpen": false
 }

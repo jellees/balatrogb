@@ -30,6 +30,7 @@ def HUD_SCREEN_GOAL_OFFSET          equ HUD_SCREEN_OFFSET + 96
 def HUD_SCREEN_GOAL_LENGTH          equ 8
 def HUD_SCREEN_SCORE_OFFSET         equ HUD_SCREEN_OFFSET + 128
 def HUD_SCREEN_SCORE_LENGTH         equ 8
+def HUD_SCREEN_MOVE_SELL_LENGTH     equ 7
 def HUD_SCREEN_MOVE_OFFSET          equ HUD_SCREEN_OFFSET + 105
 def HUD_SCREEN_SELL_OFFSET          equ HUD_SCREEN_OFFSET + 137
 
@@ -219,6 +220,19 @@ DrawScreenAttributes:
     inc hl
     ld a, PALETTE_HUD_MULT
     ld b, HUD_SCREEN_MULT_LENGTH
+    ld [hl+], a
+    dec b
+    jr nz, @-2
+    ; Move.
+    ld hl, _SCRN0 + HUD_SCREEN_MOVE_OFFSET
+    ld a, PALETTE_HUD_MOVE_SELL
+    ld b, HUD_SCREEN_MOVE_SELL_LENGTH
+    ld [hl+], a
+    dec b
+    jr nz, @-2
+    ; Sell.
+    ld hl, _SCRN0 + HUD_SCREEN_SELL_OFFSET
+    ld b, HUD_SCREEN_MOVE_SELL_LENGTH
     ld [hl+], a
     dec b
     jr nz, @-2
