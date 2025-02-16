@@ -1,5 +1,6 @@
 include "hardware.inc"
 include "assets_def.inc"
+include "vblank.inc"
 
 def CARD_MEMORY_SIZE                equ 2
 
@@ -112,14 +113,22 @@ InitDeck:
     ld b, a
     cp $40
     jr nz, .loop
+    ld hl, wDeckMask
+    ld a, 1
+    ld b, DECK_MEMORY_MAX
+.maskLoop
+    ld [hl+], a
+    dec b
+    jr nz, .maskLoop
     ret
-
 
 StartGame::
 .loop
+    ld a, VBLANK_REQUEST_FLAG_UPDATE_PALETTE
+    ld [wVblankRequestFlags], a
     ld a, [wGameState]
     cp GAME_STATE_LAY_HAND
-    jr z, GameStateLayHand
+    call z, GameStateLayHand
     halt
     jr .loop
     ret
@@ -128,4 +137,7 @@ GameStateLayHand:
     ld a, [wHandCount]
     ld b, a
     ld hl, wHandCards
+    ret
+
+LayHandCard:
     ret

@@ -91,27 +91,6 @@ InitHardware:
     ld	[rSCX], a			; $FF43	Screen Scroll X
     ret
 
-ExecVBlank:
-	push af
-	push hl
-	push bc
-
-    ld a, BCPSF_AUTOINC | 0
-    ld [rBCPS], a
-    ld hl, CardPalette
-    ld b, CardPaletteEnd - CardPalette
-.bgPaletteLoop
-    ld a, [hl+]
-    ld [rBCPD], a
-    dec b
-    jr nz, .bgPaletteLoop
-
-    pop bc
-    pop hl
-    pop af
-
-    reti
-
 ExecHBlank:
 	push af
 	push hl
