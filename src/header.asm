@@ -33,6 +33,7 @@ EntryPoint:
     call DoubleSpeedMode
     call InitHardware
     call InitGame
+    call StartGame
 
     ; ld bc, $0300
     ; ld hl, _SCRN0 + $A0 + 4
