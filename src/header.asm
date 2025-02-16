@@ -32,8 +32,9 @@ EntryPoint:
     
     call DoubleSpeedMode
     call InitHardware
+    ld bc, $1258
+    call InitPRNG
     call InitGame
-    call StartGame
 
     ; ld bc, $0300
     ; ld hl, _SCRN0 + $A0 + 4
@@ -54,6 +55,8 @@ EntryPoint:
     ei
     ld a, LCDCF_ON | LCDCF_OBJ8 | LCDCF_OBJON | LCDCF_BGON
     ld [rLCDC], a
+    
+    call StartGame
 
 .loop
     halt 
