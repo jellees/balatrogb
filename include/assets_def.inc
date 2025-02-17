@@ -1,6 +1,55 @@
 if !def(ASSETS_DEF_INC)
 def ASSETS_DEF_INC equ 1
 
+def CHAR_CARD_RANK_2                equ 0
+def CHAR_CARD_RANK_3                equ 1
+def CHAR_CARD_RANK_4                equ 2
+def CHAR_CARD_RANK_5                equ 3
+def CHAR_CARD_RANK_6                equ 4
+def CHAR_CARD_RANK_7                equ 5
+def CHAR_CARD_RANK_8                equ 6
+def CHAR_CARD_RANK_9                equ 7
+def CHAR_CARD_RANK_10               equ 8
+def CHAR_CARD_RANK_J                equ 9
+def CHAR_CARD_RANK_Q                equ 10
+def CHAR_CARD_RANK_K                equ 11
+def CHAR_CARD_RANK_A                equ 12
+
+def CHAR_CARD_RANK_J_UNKNOWN        equ 30
+def CHAR_CARD_RANK_Q_UNKNOWN        equ 31
+def CHAR_CARD_RANK_K_UNKNOWN        equ 32
+
+def CHAR_CARD_SUIT_SPADES_FACE      equ 13
+def CHAR_CARD_SUIT_CLUBS_FACE       equ 14
+def CHAR_CARD_SUIT_HEARTS_FACE      equ 34
+def CHAR_CARD_SUIT_DIAMONDS_FACE    equ 35
+
+def CHAR_CARD_SUIT_SPADES           equ 22
+def CHAR_CARD_SUIT_CLUBS            equ 23
+def CHAR_CARD_SUIT_HEARTS           equ 24
+def CHAR_CARD_SUIT_DIAMONDS         equ 25
+
+def CHAR_CARD_SUIT_SPADES_ACE       equ 26
+def CHAR_CARD_SUIT_CLUBS_ACE        equ 27
+def CHAR_CARD_SUIT_HEARTS_ACE       equ 28
+def CHAR_CARD_SUIT_DIAMONDS_ACE     equ 29
+
+def CHAR_CARD_SUIT_WILD_FACE        equ 15
+
+def CHAR_CARD_ENHA_WILD             equ 16
+def CHAR_CARD_ENHA_GLASS            equ 17
+def CHAR_CARD_ENHA_BONUS            equ 18
+def CHAR_CARD_ENHA_MULT             equ 19
+def CHAR_CARD_ENHA_LUCKY            equ 20
+def CHAR_CARD_ENHA_NONE             equ 33
+def CHAR_CARD_ENHA_NONE_FACE        equ 36
+def CHAR_CARD_ENHA_WILD_FACE        equ 37
+def CHAR_CARD_ENHA_GLASS_FACE       equ 38
+def CHAR_CARD_ENHA_BONUS_FACE       equ 39
+def CHAR_CARD_ENHA_MULT_FACE        equ 40
+def CHAR_CARD_ENHA_LUCKY_FACE       equ 41
+
+
 def CHAR_CLEAR_OFFSET           equ $15
 def CHAR_BLACK_OFFSET           equ $3B
 def CHAR_HUD_TILE_OFFSET        equ $39

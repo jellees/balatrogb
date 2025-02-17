@@ -21,19 +21,11 @@ def TAROT_MAX_DEFAULT               equ 2
 def HUD_PALETTE_CHANGE_LINE         equ 102
 
 def GAME_STATE_LAY_HAND             equ 0
-def GAME_STATE_SELECT_CARDS         equ 0
-def GAME_STATE_LAY_PLAYED_CARDS     equ 0
-def GAME_STATE_UPDATE_SCORE         equ 0
+def GAME_STATE_SELECT_CARDS         equ 1
+def GAME_STATE_LAY_PLAYED_CARDS     equ 2
+def GAME_STATE_UPDATE_SCORE         equ 3
 
 section "Game ram", wram0
-
-; Card encoding. 2 bytes.
-; Bits:
-; 0-3 = rank
-; 4-5 = suit
-; 6-7 = seal
-; 8-11 = enhanchement
-; 12-15 = edition
 
 wDeck:              ds CARD_MEMORY_SIZE * DECK_MEMORY_MAX
 wDeckMask:          ds DECK_MEMORY_MAX
@@ -133,10 +125,94 @@ StartGame::
     jr .loop
     ret
 
+def SETTINGS equ $2000
+
 GameStateLayHand:
     ld a, [wHandCount]
     ld b, a
     ld hl, wHandCards
+
+    ld a, 0
+    ld bc, $0000 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 2
+    ld bc, $0100 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 4
+    ld bc, $0200 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 6
+    ld bc, $0300 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 8
+    ld bc, $0400 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 10
+    ld bc, $0500 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 12
+    ld bc, $0600 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 14
+    ld bc, $0700 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 16
+    ld bc, $0800 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 18
+    ld bc, $0900 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 96 + 0
+    ld bc, $0A00 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 96 + 2
+    ld bc, $0B00 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, 96 + 4
+    ld bc, $0C00 | SETTINGS
+    call DrawCard
+    halt
+    halt
+
+    ld a, GAME_STATE_LAY_PLAYED_CARDS
+    ld [wGameState], a
+
     ret
 
 LayHandCard:
