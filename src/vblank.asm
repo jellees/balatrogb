@@ -7,7 +7,7 @@ section "Vblank ram", wram0
 wVblankRequestFlags::       ds 1
 
 wCardRemoveOffset:          ds 1
-wCardDrawOffset::           ds 1
+wCardDrawOffset::           ds 2
 wCardBuffer::               ds 6 * 2        ; There are six tiles for each card, double for attributes.
 
 section "Vblank code", rom0
@@ -65,8 +65,9 @@ ExecVBlank::
     xor a
     ld [rVBK], a
     ld hl, _SCRN0
-    ld b, 0
     ld a, [wCardDrawOffset]
+    ld b, a
+    ld a, [wCardDrawOffset+1]
     ld c, a
     add hl, bc
     push hl

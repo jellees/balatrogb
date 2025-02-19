@@ -132,80 +132,107 @@ GameStateLayHand:
     ld b, a
     ld hl, wHandCards
 
-    ld a, 0
-    ld bc, $0000 | SETTINGS
+    ld de, 0
+    ld b, $00
+    ld c, 0
     call DrawCard
     halt
     halt
 
-    ld a, 2
-    ld bc, $0100 | SETTINGS
+    ld de, 2
+    ld b, $11
+    ld c, 0
     call DrawCard
     halt
     halt
 
-    ld a, 4
-    ld bc, $0200 | SETTINGS
+    ld de, 4
+    ld b, $22
+    ld c, 0
     call DrawCard
     halt
     halt
 
-    ld a, 6
-    ld bc, $0300 | SETTINGS
+    ld de, 6
+    ld b, $33
+    ld c, CARD_ENHA_WILD
     call DrawCard
     halt
     halt
 
-    ld a, 8
-    ld bc, $0400 | SETTINGS
+    ld de, 8
+    ld b, 4
+    ld c, CARD_ENHA_STEEL
     call DrawCard
     halt
     halt
 
-    ld a, 10
-    ld bc, $0500 | SETTINGS
+    ld de, 10
+    ld b, 5
+    ld c, CARD_ENHA_BONUS
     call DrawCard
     halt
     halt
 
-    ld a, 12
-    ld bc, $0600 | SETTINGS
+    ld de, 12
+    ld b, 6
+    ld c, CARD_ENHA_MULT
     call DrawCard
     halt
     halt
 
-    ld a, 14
-    ld bc, $0700 | SETTINGS
+    ld de, 14
+    ld b, 7
+    ld c, CARD_ENHA_LUCKY
     call DrawCard
     halt
     halt
 
-    ld a, 16
-    ld bc, $0800 | SETTINGS
+    ld de, 16
+    ld b, 8
+    ld c, CARD_ENHA_GOLD
     call DrawCard
     halt
     halt
 
-    ld a, 18
-    ld bc, $0900 | SETTINGS
+    ld de, 288
+    ld b, $0C
+    ld c, CARD_ENHA_WILD
     call DrawCard
     halt
     halt
 
-    ld a, 96 + 0
-    ld bc, $0A00 | SETTINGS
+    ld de, 288 + 2
+    ld b, $1C
+    ld c, CARD_ENHA_STEEL
     call DrawCard
     halt
     halt
 
-    ld a, 96 + 2
-    ld bc, $0B00 | SETTINGS
+    ld de, 288 + 4
+    ld b, $2C
+    ld c, CARD_ENHA_BONUS
     call DrawCard
     halt
     halt
 
-    ld a, 96 + 4
-    ld bc, $0C00 | SETTINGS
+    ld de, 288 + 6
+    ld b, $3C
+    ld c, CARD_ENHA_MULT
+    call DrawCard
+    halt
+    halt
+
+    ld de, 288 + 8
+    ld b, $3C
+    ld c, CARD_ENHA_LUCKY
+    call DrawCard
+    halt
+    halt
+
+    ld de, 288 + 10
+    ld b, $3C
+    ld c, CARD_ENHA_GOLD
     call DrawCard
     halt
     halt

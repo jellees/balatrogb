@@ -35,20 +35,27 @@ def CHAR_CARD_SUIT_HEARTS_ACE       equ 28
 def CHAR_CARD_SUIT_DIAMONDS_ACE     equ 29
 
 def CHAR_CARD_SUIT_WILD_FACE        equ 15
+def CHAR_CARD_SUIT_WILD             equ 16
+def CHAR_CARD_SUIT_WILD_ACE         equ 88
 
-def CHAR_CARD_ENHA_WILD             equ 16
-def CHAR_CARD_ENHA_GLASS            equ 17
+def CHAR_CARD_ENHA_WILD             equ 37
+def CHAR_CARD_ENHA_STEEL            equ 17
+def CHAR_CARD_ENHA_GOLD             equ 17
 def CHAR_CARD_ENHA_BONUS            equ 18
 def CHAR_CARD_ENHA_MULT             equ 19
 def CHAR_CARD_ENHA_LUCKY            equ 20
 def CHAR_CARD_ENHA_NONE             equ 33
 def CHAR_CARD_ENHA_NONE_FACE        equ 36
-def CHAR_CARD_ENHA_WILD_FACE        equ 37
-def CHAR_CARD_ENHA_GLASS_FACE       equ 38
+def CHAR_CARD_ENHA_WILD_FACE        equ CHAR_CARD_ENHA_NONE_FACE
+def CHAR_CARD_ENHA_STEEL_FACE       equ 38
+def CHAR_CARD_ENHA_GOLD_FACE        equ 38
 def CHAR_CARD_ENHA_BONUS_FACE       equ 39
 def CHAR_CARD_ENHA_MULT_FACE        equ 40
 def CHAR_CARD_ENHA_LUCKY_FACE       equ 41
 
+def CHAR_CARD_STONE_TOP             equ 89
+def CHAR_CARD_STONE_MIDDLE          equ 90
+def CHAR_CARD_STONE_BOTTOM          equ 91
 
 def CHAR_CLEAR_OFFSET           equ $15
 def CHAR_BLACK_OFFSET           equ $3B
@@ -89,12 +96,27 @@ def CHAR_LETTER_X_OFFSET        equ 68
 def CHAR_LETTER_Y_OFFSET        equ 69
 def CHAR_LETTER_Z_OFFSET        equ 70
 
-def PALETTE_HUD_HAND         equ 0
-def PALETTE_HUD_CHIPS        equ 1
-def PALETTE_HUD_MULT         equ 2
-def PALETTE_HUD_MONEY        equ 3
-def PALETTE_HUD_DEFAULT      equ 4
-def PALETTE_HUD_GOAL         equ 5
-def PALETTE_HUD_MOVE_SELL    equ 6
+def PALETTE_CARD_RED_NUMBERS    equ 0
+def PALETTE_CARD_FACE           equ 3
+def PALETTE_CARD_SPADES         equ 1
+def PALETTE_CARD_CLUBS          equ 2
+def PALETTE_CARD_DIAMONDS       equ 3
+def PALETTE_CARD_HEARTS         equ 3
+def PALETTE_CARD_BONUS          equ 3
+def PALETTE_CARD_MULT_TOP       equ 0
+def PALETTE_CARD_MULT_BOTTOM    equ 1
+def PALETTE_CARD_WILD           equ 3
+def PALETTE_CARD_LUCKY          equ 4
+def PALETTE_CARD_STONE          equ 1
+def PALETTE_CARD_STEEL          equ 1
+def PALETTE_CARD_GOLD           equ 4
+
+def PALETTE_HUD_HAND            equ 0
+def PALETTE_HUD_CHIPS           equ 1
+def PALETTE_HUD_MULT            equ 2
+def PALETTE_HUD_MONEY           equ 3
+def PALETTE_HUD_DEFAULT         equ 4
+def PALETTE_HUD_GOAL            equ 5
+def PALETTE_HUD_MOVE_SELL       equ 6
 
 endc
